@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>DEVMATRIX — Próximamente</title>
+  <!-- Estilos se agregarán en la siguiente fase -->
+</head>
+<body>
+
+  <main>
+    <h1>DEVMATRIX está evolucionando.</h1>
+    <p>Estamos en fase de optimización. Volvemos pronto.</p>
+
+    <!-- Formulario de captura de acceso prioritario -->
+    <form id="subscribeForm">
+      <label for="emailInput">Correo electrónico</label>
+      <input
+        type="email"
+        id="emailInput"
+        name="email"
+        placeholder="tu@correo.com"
+        required
+        autocomplete="email"
+      />
+      <button type="submit">Unirme a la lista</button>
+      <p id="formMsg" aria-live="polite"></p>
+    </form>
+  </main>
+
+  <script>
+    const form    = document.getElementById('subscribeForm');
+    const formMsg = document.getElementById('formMsg');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('emailInput').value.trim();
+      if (!email) return;
+
+      try {
+        const res  = await fetch('/api/subscribe', {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify({ email })
+        });
+        const data = await res.json();
+
+        formMsg.textContent = data.message;
+
+        if (res.ok) {
+          form.reset();
+          form.style.display = 'none';
+        }
+      } catch {
+        formMsg.textContent = 'Error de conexión. Intenta de nuevo.';
+      }
+    });
+  </script>
+
+</body>
+</html>
