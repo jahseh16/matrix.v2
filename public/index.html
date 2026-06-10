@@ -8,171 +8,148 @@
   <title>DEVMATRIX — Próximamente</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
 
-  <!-- Campo de estrellas (canvas) -->
   <canvas id="starfield" aria-hidden="true"></canvas>
-
-  <!-- Orbes de luz ambiental -->
   <div class="orb orb-1" aria-hidden="true"></div>
   <div class="orb orb-2" aria-hidden="true"></div>
 
-  <!-- ═══════════════════════════════
-       PANTALLA PRINCIPAL
-  ═══════════════════════════════ -->
-  <div class="screen">
+  <div class="page">
 
-    <!-- HERO -->
+    <!-- ══ HERO ══ -->
     <header class="hero">
       <div class="hero-logo">
-        <svg width="36" height="36" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-          <rect width="36" height="36" rx="10" fill="url(#lg)"/>
-          <text x="50%" y="54%" dominant-baseline="middle" text-anchor="middle"
-                font-family="Inter,sans-serif" font-size="14" font-weight="900"
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect width="40" height="40" rx="11" fill="url(#logoGrad)"/>
+          <text x="50%" y="53%" dominant-baseline="middle" text-anchor="middle"
+                font-family="Inter,sans-serif" font-size="15" font-weight="900"
                 fill="#fff" letter-spacing="-0.5">DM</text>
           <defs>
-            <linearGradient id="lg" x1="0" y1="0" x2="36" y2="36" gradientUnits="userSpaceOnUse">
-              <stop offset="0%"  stop-color="#7c3aed"/>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#7c3aed"/>
               <stop offset="100%" stop-color="#4f46e5"/>
             </linearGradient>
           </defs>
         </svg>
       </div>
 
-      <div class="hero-badge">
+      <div class="status-badge">
         <span class="badge-dot"></span>
         SISTEMA EN OPTIMIZACIÓN
       </div>
 
-      <h1 class="hero-title">DEVMATRIX<br><span class="hero-sub-line">está evolucionando.</span></h1>
-      <p class="hero-version">v2.0 — Nueva generación &middot; 25.07.2026</p>
+      <h1 class="hero-title">DEVMATRIX<br><span>está evolucionando.</span></h1>
+      <p class="hero-meta">v2.0 · Nueva generación · Retorno 25.07.2026</p>
     </header>
 
-    <!-- GRID CENTRAL: Mensaje + Countdown -->
-    <div class="center-grid">
-
-      <!-- Mensaje de Evolución -->
-      <div class="card card-glow" aria-label="Qué está pasando">
-        <p class="card-label">▸ ¿QUÉ ESTÁ PASANDO?</p>
-        <p class="body-text">
-          Estamos en una <strong>fase de optimización masiva</strong>: eliminando bugs estructurales,
-          reestructurando el backend para soportar escala real e integrando
-          <strong>modelos de IA de última generación</strong> — más rápidos,
-          precisos y potentes que todo lo anterior.
-        </p>
-      </div>
-
-      <!-- Countdown -->
-      <div class="card countdown-wrap" aria-label="Cuenta regresiva">
-        <p class="card-label">▸ RETORNO EN</p>
-        <div class="countdown-grid" id="countdown">
-          <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-label">DÍAS</span></div>
-          <div class="cd-sep" aria-hidden="true">:</div>
-          <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-label">HORAS</span></div>
-          <div class="cd-sep" aria-hidden="true">:</div>
-          <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-label">MIN</span></div>
-          <div class="cd-sep" aria-hidden="true">:</div>
-          <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-label">SEG</span></div>
-        </div>
-      </div>
-
-    </div><!-- /.center-grid -->
-
-    <!-- GRID INFERIOR: Novedades + Formulario -->
-    <div class="bottom-grid">
-
-      <!-- Qué se viene -->
-      <div class="card card-features" aria-label="Novedades v2.0">
-        <p class="card-label">▸ QUÉ SE VIENE EN v2.0</p>
-        <ul class="feature-list" role="list">
-
-          <li class="feature-item">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
-              </svg>
-            </div>
-            <div class="feature-body">
-              <span class="feature-title">Mayor Velocidad de Respuesta</span>
-              <span class="feature-desc">Optimización de rutas y código limpio.</span>
-            </div>
-          </li>
-
-          <li class="feature-item">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-              </svg>
-            </div>
-            <div class="feature-body">
-              <span class="feature-title">Modelos Avanzados de IA</span>
-              <span class="feature-desc">Mayor precisión y razonamiento extendido.</span>
-            </div>
-          </li>
-
-          <li class="feature-item">
-            <div class="feature-icon" aria-hidden="true">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/>
-              </svg>
-            </div>
-            <div class="feature-body">
-              <span class="feature-title">Infraestructura Propia y Dedicada</span>
-              <span class="feature-desc">Cero caídas, servidores locales optimizados.</span>
-            </div>
-          </li>
-
-        </ul>
-      </div>
-
-      <!-- Formulario -->
-      <div class="card card-email card-glow" aria-label="Acceso prioritario">
-        <p class="card-label">▸ ACCESO PRIORITARIO</p>
-        <h2 class="email-heading">Sé el primero en volver.</h2>
-        <p class="email-desc">
-          Un único correo con la guía de actualización y las nuevas funciones
-          el día del lanzamiento. Sin spam.
-        </p>
-
-        <form id="subscribeForm" novalidate>
-          <div class="input-row">
-            <input type="email" id="emailInput" name="email"
-                   placeholder="tu@correo.com" autocomplete="email"
-                   required aria-label="Correo electrónico" />
-            <button type="submit" id="submitBtn">
-              <span id="btnText">Unirme</span>
-              <span id="btnSpinner" class="btn-spinner hidden" aria-hidden="true"></span>
-            </button>
-          </div>
-          <p id="formMsg" class="form-msg" aria-live="polite"></p>
-        </form>
-
-        <div id="successMsg" class="success-msg hidden" role="alert">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>¡Listo! Te escribimos el día del lanzamiento.</span>
-        </div>
-      </div>
-
-    </div><!-- /.bottom-grid -->
-
-    <!-- FOOTER -->
-    <footer class="site-footer">
-      <p class="footer-alliance">
-        Infraestructura operada y respaldada por
-        <a href="https://oniultrahost.lat" target="_blank" rel="noopener noreferrer">Oniultrahost.lat</a>
-        &mdash; máxima disponibilidad y latencia ultra baja en LATAM.
+    <!-- ══ TARJETA: QUÉ ESTÁ PASANDO ══ -->
+    <div class="card led-card" data-led="purple">
+      <span class="card-tag">▸ ¿QUÉ ESTÁ PASANDO?</span>
+      <p class="card-body">
+        DEVMATRIX está en una <strong>fase de optimización masiva</strong>: eliminando bugs estructurales,
+        reestructurando el backend para soportar escala real e integrando
+        <strong>modelos de IA de última generación</strong> — más veloces, precisos y potentes
+        que todo lo que existía antes.
       </p>
-      <div class="footer-bottom">
-        <span class="footer-logo-text">DEVMATRIX</span>
-        <span class="footer-sep">&middot;</span>
-        <span>&copy; 2026 Todos los derechos reservados</span>
+      <p class="card-body" style="margin-top:8px">
+        Esta pausa no es un retroceso. Es la inversión necesaria para que
+        la próxima versión sea, de lejos, la más robusta que hayamos lanzado.
+      </p>
+    </div>
+
+    <!-- ══ COUNTDOWN ══ -->
+    <div class="card led-card countdown-card" data-led="blue">
+      <span class="card-tag">▸ TIEMPO RESTANTE</span>
+      <div class="cd-row">
+        <div class="cd-unit"><span class="cd-num" id="cd-days">--</span><span class="cd-lbl">DÍAS</span></div>
+        <span class="cd-colon" aria-hidden="true">:</span>
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">--</span><span class="cd-lbl">HORAS</span></div>
+        <span class="cd-colon" aria-hidden="true">:</span>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">--</span><span class="cd-lbl">MIN</span></div>
+        <span class="cd-colon" aria-hidden="true">:</span>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">--</span><span class="cd-lbl">SEG</span></div>
+      </div>
+      <p class="cd-caption">Retorno estimado: <strong>25 de julio de 2026</strong></p>
+    </div>
+
+    <!-- ══ QUÉ SE VIENE ══ -->
+    <div class="card led-card" data-led="purple">
+      <span class="card-tag">▸ QUÉ SE VIENE EN v2.0</span>
+      <ul class="feat-list">
+        <li class="feat-item">
+          <div class="feat-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div>
+            <p class="feat-title">Mayor Velocidad de Respuesta</p>
+            <p class="feat-desc">Optimización profunda de rutas y código completamente reescrito.</p>
+          </div>
+        </li>
+        <li class="feat-item">
+          <div class="feat-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 1 7.38 16.76M12 22a10 10 0 0 1-7.38-16.76"/><circle cx="12" cy="12" r="3" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <div>
+            <p class="feat-title">Modelos Avanzados de IA</p>
+            <p class="feat-desc">Mayor precisión, razonamiento extendido y respuestas más profundas.</p>
+          </div>
+        </li>
+        <li class="feat-item">
+          <div class="feat-icon">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <div>
+            <p class="feat-title">Infraestructura Propia y Dedicada</p>
+            <p class="feat-desc">Cero caídas. Servidores locales optimizados exclusivamente para DEVMATRIX.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- ══ FORMULARIO ══ -->
+    <div class="card led-card email-card" data-led="green">
+      <span class="card-tag">▸ ACCESO PRIORITARIO</span>
+      <h2 class="email-title">Sé el primero en volver.</h2>
+      <p class="card-body">
+        Únete a la lista. Te enviaremos <strong>un único correo</strong> con la guía de
+        actualización y las nuevas funciones el día del lanzamiento. Sin spam.
+      </p>
+      <form id="subscribeForm" novalidate>
+        <div class="input-row">
+          <input type="email" id="emailInput" name="email"
+                 placeholder="tu@correo.com" autocomplete="email"
+                 required aria-label="Correo electrónico" />
+          <button type="submit" id="submitBtn">
+            <span id="btnText">Unirme</span>
+            <span id="btnSpinner" class="spinner hidden" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p id="formMsg" class="form-msg" aria-live="polite"></p>
+      </form>
+      <div id="successMsg" class="success-msg hidden" role="alert">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+        ¡Listo! Te escribimos el día del lanzamiento.
+      </div>
+    </div>
+
+    <!-- ══ FOOTER ══ -->
+    <footer class="footer">
+      <p class="footer-alliance">
+        Infraestructura operada y respaldada en su totalidad por
+        <a href="https://oniultrahost.lat" target="_blank" rel="noopener noreferrer">Oniultrahost.lat</a>
+        — máxima disponibilidad y latencia ultra baja en LATAM.
+      </p>
+      <div class="footer-copy">
+        <span class="footer-brand">DEVMATRIX</span>
+        <span>·</span>
+        <span>© 2026 Todos los derechos reservados</span>
       </div>
     </footer>
 
-  </div><!-- /.screen -->
+  </div><!-- /.page -->
 
   <script src="/script.js"></script>
 </body>
